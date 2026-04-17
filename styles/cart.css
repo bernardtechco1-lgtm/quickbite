@@ -296,7 +296,57 @@
 }
 
 
+
+.empty{
+    position: relative;
+    left: 30px;
+    top: 50px;
+    border: hidden;
+    border-radius: 20px;
+    background-color: var(--cream2);
+    text-align: center;
+    border-top: 50px ;
+    width: 95%;
+    min-height: 300px;
+}
+
+.empty #noItems{
+    text-align: center;
+    padding-top: 20px;
+    color: var(--brown);
+}
+.empty.hide{
+    display: none;
+}
+#cartimg{
+    padding-top: 30px;
+
+}
+
+#button{
+    cursor: pointer;
+    border: hidden;
+    justify-content: center;
+    background-color: var(--brown-light);
+    border-radius: 20px;
+    border: hidden;
+    width: 130px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    gap: 8px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+#button:hover{
+    width: 150px;
+    background-color: var(--muted);
+
+}
+
 footer {
+    position: relative;
+    top: 500px;
+
     background: var(--brown-mid); color: rgba(255,255,255,0.6);
     padding: 28px 5%; margin-top: 32px;
     display: flex; justify-content: space-between; align-items: center;
