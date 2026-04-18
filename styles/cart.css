@@ -1,0 +1,364 @@
+  :root {
+    --orange: #E05C3A;
+    --orange-light: #F07A5A;
+    --orange-pale: #FDF0EB;
+    --brown: #2C1810;
+    --brown-mid: #4A2C1A;
+    --brown-light: #7A4A30;
+    --white: #FFFFFF;
+    --cream: #FDF8F4;
+    --cream2: #F5EDE4;
+    --text: #2C1810;
+    --muted: #9A7060;
+    --border: rgba(44,24,16,0.1);
+    --radius: 20px;
+    --radius-sm: 12px;
+  }
+
+
+
+.block1{
+    margin-left: 35px;
+    
+
+
+}
+
+.block1 .mainText{
+    color: var(--brown);
+    font-weight: 900;
+}
+
+.block1 .subText{
+    color: var(--brown-light);
+   
+
+}
+
+
+.items{
+    position: relative;
+    margin-left: 35px;
+    border-style: hidden;
+    background-color: white;
+    min-height: 150px;
+    max-width: 700px;
+    display: flex;
+    border-radius: 20px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    margin-bottom: 20px;
+
+
+}
+.items .itemImage{
+    text-align: left;
+    width: 150px;
+    max-height: 150px;
+    border-radius: 20px;
+    margin: 20px;
+
+
+
+}
+
+
+.items .description{
+    text-align: justify;
+    margin-top: 20px;
+    
+}
+
+.items .description .name{
+    font-weight: 900;
+    color: var(--brown);
+
+}
+
+.items .descriptionItem{
+    color: var(--brown-light);
+}
+
+.items .placeHold{
+    font-size: x-small;
+    color: brown;
+    font-weight: bold;
+    border: hidden;
+    width: 65px;
+    height: 18px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: 20px;
+
+    
+    background-color: var(--cream2);
+    border-radius: 20px;
+    
+}
+
+.items .quantitySelector{
+    border: hidden;
+    background-color: var(--cream2);
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 20px;
+    width: 80px;
+    height: 25px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 20px; 
+    font-family: sans-serif
+    
+}
+
+
+.items .quantitySelector .quan{
+    font-size: x-small;
+    text-align: center;
+
+}
+
+
+
+.items .quantitySelector .buttons{
+    cursor: pointer;
+    background: none;
+    border: hidden;
+    color: var(--brown-light);
+    justify-content: center;
+    
+   
+   
+}
+
+.items .quantitySelector .button2{
+    cursor: pointer;
+    background: none;
+    border: hidden;
+    color: var(--brown-light);
+    justify-content: center;
+    
+    
+
+   
+    
+
+
+}
+
+.items:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 18px 44px rgba(44,24,16,0.12);
+    transition: all ease 0.5s;
+    
+}
+
+.items .closeBut{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    background: none;
+    border: hidden;
+    color: var(--brown-light);
+    
+   
+
+}
+
+.items .price{
+    position: absolute;
+    color: var(--brown);
+    font-weight: 900;
+    bottom: 15px;
+    right: 30px;
+
+}
+
+.check {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    width: 450px; 
+    height: px;  
+    z-index: 100;
+    animation: bounce 4s infinite ease-in-out alternate;
+}
+
+.check.hide{
+    display: none;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.checkout{
+    
+    text-align: right;
+    right: 30px;
+    top: 200px;
+    border: hidden;
+    background-color: var(--cream2);
+    border-radius: 10px;
+    height: 410px;
+    width: 450px;
+    
+
+}
+.checkout .h1{
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: var(--brown);
+    font-weight: 900;
+}
+
+.checkout .remH{
+    text-align: left;
+    padding-left: 50px;
+    color: var(--muted);
+    
+}
+
+.checkout .checkoutPrice{
+    position: absolute;
+    right: 50px;
+    top: 113px;
+}
+.checkout .line{
+    
+    margin: 20px auto;
+    width: 300px;
+    border: none;
+    height: 0.5px;
+    background-color: var(--brown-mid);
+    
+   
+}
+.checkoutTotal .h{
+    position:absolute ;
+    left: 50px;
+    bottom: 100px ;
+    text-align: left;
+}
+
+.checkoutTotal #light{
+    font-size: x-small;
+    color: var(--brown-light);
+}
+
+.checkoutTotal #thick1{
+    color: var(--brown);
+    font-weight: 900;
+}
+
+.checkoutTotal .ArrivalTime{
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    
+    
+}
+.checkoutTotal .ArrivalTime #light2{
+    color: var(--brown-light);
+    
+    
+}
+.checkoutTotal .ArrivalTime #thick{
+    color: var(--brown);
+    font-weight: 900;
+}
+.checkoutButtonContainer{
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+
+.checkoutButton{
+    cursor: pointer;
+    background-color: var(--orange);
+    border-radius: 20px;
+    border: hidden;
+    width: 130px;
+    height: 40px;
+    color: white;
+    font-weight: 700;
+    gap: 8px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+.checkoutButton:hover{
+    width: 150px;
+    background-color: #e67e22;
+
+}
+
+
+
+.empty{
+    position: relative;
+    left: 30px;
+    top: 50px;
+    border: hidden;
+    border-radius: 20px;
+    background-color: var(--cream2);
+    text-align: center;
+    border-top: 50px ;
+    width: 95%;
+    min-height: 300px;
+}
+
+.empty #noItems{
+    text-align: center;
+    padding-top: 20px;
+    color: var(--brown);
+}
+.empty.hide{
+    display: none;
+}
+#cartimg{
+    padding-top: 30px;
+
+}
+
+#button{
+    cursor: pointer;
+    border: hidden;
+    justify-content: center;
+    background-color: var(--brown-light);
+    border-radius: 20px;
+    border: hidden;
+    width: 130px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    gap: 8px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+#button:hover{
+    width: 150px;
+    background-color: var(--muted);
+
+}
+
+footer {
+    position: relative;
+    top: 500px;
+
+    background: var(--brown-mid); color: rgba(255,255,255,0.6);
+    padding: 28px 5%; margin-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; font-weight: 500;
+  }
+  footer a { color: var(--orange); text-decoration: none; }
+
+
+li{
+    list-style-type: none;
+}

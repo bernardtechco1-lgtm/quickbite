@@ -34,6 +34,7 @@
     color: var(--orange);
     text-decoration: none;
     letter-spacing: -0.5px;
+    /* margin-left: 55px; */
   }
 
   .nav-logo span { color: var(--brown); }
@@ -53,11 +54,11 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 35px;
 }
 
 nav{
-    width: 350px;
+    width: 250px;
     margin-top: 5px ;
 }
 
@@ -103,12 +104,6 @@ nav ul a .active li{
 }
 
 
-/* .right{
-    width: 180px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 .right button{
     background-color: #FF6B00;
@@ -117,4 +112,37 @@ nav ul a .active li{
     border: none;
     color: #fff;
     text-transform: capitalize;
+}
+
+.right .order {
+    background: var(--orange);
+    color: white;
+    border: none;
+    /* Reduced padding and font-size */
+    padding: 10px 22px; 
+    font-size: 14px;
+    
+    border-radius: 99px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex; /* Changed to inline-flex to align arrow perfectly */
+    align-items: center;
+    gap: 8px; /* Space between text and arrow */
+}
+
+.right .order::after {
+    content: '→'; 
+    transition: transform 0.3s ease;
+}
+
+.right .order:hover {
+    background: #e67e22;
+    padding-right: 26px;
+}
+
+.right .order:hover::after {
+    transform: translateX(5px);
 }

@@ -216,18 +216,6 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* .hero .section2 img:hover {
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-
-.hero .section2 img:hover {
-    transform: scale(1.05) translateY(-8px) rotate(1deg);
-} */
-
-
-
 
 .hero .section2 .box1 img {
     animation: float 6s ease-in-out infinite;
@@ -257,44 +245,7 @@
     100% { transform: translateY(0px); }
 }
 
-/* .hero .section2 .content2{
-    background-color: blue;
-    width: 50%;
-} */
 
-/* .feature{
-    padding: 2%;
-}
-
-.feature h2{
-    text-transform: capitalize;
-}
-.feature .cards{
-    margin-top: 2%;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-.feature .card{
-    width: 230px;
-    height: 350px;
-    background-color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 0 8px 2px #dddddd;
-    padding: 10px;
-}
-
-.feature .card .image{
-    width: 100%;
-    height: 200px;
-    background-color: #dddddd;
-    border-radius: 50px;
-} */
-
-.choose{
-    padding: 2%;
-}
 
 .choose h2{
     text-transform: capitalize;
@@ -331,13 +282,6 @@
     background-color:blue ;
     border-radius: 10px;
 }
-
-/* .works .container .content2{
-    width: 30%;
-    height: 400px;
-    background-color: blue;
-} */
-
 
 .featured{
     padding: 3% 5%;
@@ -421,10 +365,7 @@
     height: 150px;
     
     border-radius: 20px;
-    /* color: var(--text); */
     padding: 10px;
-    /* font-weight: 900;
-    font-size: 25px; */
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -438,10 +379,7 @@
     height: 300px;
     
     border-radius: 20px;
-    /* color: var(--text); */
     padding: 10px;
-    /* font-weight: 900;
-    font-size: 25px; */
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -455,10 +393,7 @@ position: absolute;
     height: 200px;
     
     border-radius: 20px;
-    /* color: var(--text); */
     padding: 10px;
-    /* font-weight: 900;
-    font-size: 25px; */
     display: flex;
     flex-direction: column;
     justify-content: end;

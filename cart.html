@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/restaurant.css">
+    <link rel="stylesheet" href="styles/cart.css">
     <title>Shopping Cart</title>
 </head>
 <body>
         <header>
 
         <div class="logo">
-           <a href="home.html" class="nav-logo">Quick<span>Bite</span></a>
+           <a href="index.html" class="nav-logo">Quick<span>Bite</span></a>
         </div>
 
 
         <nav>
             <ul>
-                <a href="home.html" >
+                <a href="index.html" >
                     
                      <!-- <img src="icons/house-blank (1).png" alt=""> -->
                     <li>home</li>
@@ -28,15 +28,11 @@
                     <li>menu</li>
                     
                 </a>
-                <a href="restaurant.html">
-                    <!-- <img src="icons/room-service (1).png" alt=""> -->
-                    <li>resaturant</li>
-                  
-                </a>
+                
                 <a href="cart.html">
                     <!-- <img src="" alt=""> -->
                      <div class="active">
-                    <img src="icons/shopping-cart.png" alt="">
+                    <img src="icons/shopping_cart_24dp_FF6B00_FILL0_wght400_GRAD0_opsz24.svg" alt="cart logo">
                     <li>cart</li>
                      </div>
                 </a>
@@ -47,10 +43,106 @@
         <div class="right">
            
 
-            <button >order now</button>
+            <button class="order" >order now</button>
         </div>
+    
     </header>
+    <br>
+    
 
- 
+   
+
+    <main id ="body">
+        
+        <div class = "section1">
+            <div class="block1">
+            
+                <h1 class = "mainText">Your Selection</h1>
+                <h5 class = "subText">Review your curated culinary experience before proceeding.</h5>
+                 
+            </div>
+            <br><ul id="list-container"></ul>
+
+        <div class = "empty">
+            <div id = "cartimg">
+                <img width= "100px" src="images/shopping_cart (2).png">
+            </div>
+            
+                <b><p id = "noItems">Your cart is empty!</p></b>
+                <p id = "noItems">Browse our categories and discover our best deals!</p><br>
+
+                <a href="menu.html">
+                    <button id = "button">Start Shopping</button>
+                </a>
+        
+        </div>
+
+
+
+    </main>
+
+     <div class = "check">
+
+        <div class = "checkout">
+             <h2 class = "h1">Order Summary</h2>
+             <div class = "remH">
+                 <h5 style="padding-bottom: 20px;">Subtotal</h5>
+        
+                 <h5 style="padding-bottom: 20px; ">Estimated Delivery</h5>
+                 <h5 style="padding-bottom: 10px;">Service Fee</h5>
+                 <div class ="checkoutPrice">
+                     <h5 style="padding-bottom: 20px;" id="Subtotal"></h5>
+                     <h5 style="padding-bottom: 20px;" id="delivery"></h5>
+                     <h5 id="service"></h5>
+                 </div>
+
+
+             </div>
+            
+             <hr class = "line">
+             <br>
+
+             <div class = "checkoutTotal">
+
+             <div class = "h">
+                 <h2 id = "light"  >TOTAL DUE</h2>
+                 <h2  id = "total"></h2>
+             </div>
+
+            
+             <div class="ArrivalTime">
+                 <h6 id = "thick">Estimated arrival</h6>
+                 <h4 id = "light2">5 - 12min</h4>
+             </div>
+
+             </div>
+
+             <div class = "checkoutButtonContainer">
+                 <button class="checkoutButton">Checkout &RightArrow;</button>
+             </div>
+
+
+
+
+        
+         </div>
+
+     </div>
+
+    <footer>
+        <span>© 2025 QuickBite · <a href="index.html">Back to home</a></span>
+        <span>Munch Box · Veritas University · Open 8am–10pm</span>
+    </footer>
+
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+    AOS.init();
+</script>
+
+<script src = "scripts/cart.js">
+</script>
+<script ></script>
 </body>
+
+
 </html>

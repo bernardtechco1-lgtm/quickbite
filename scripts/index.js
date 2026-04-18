@@ -12,3 +12,10 @@
 
 const colorchange = document.getElementsByClassName("money")
 colorchange.style.color = "green";
+view.addEventListener('click', () => {
+    window.location.href = 'restaurant.html';
+});
+
+
+const yearSpan = document.querySelector('#year');
+yearSpan.textContent = new Date().getFullYear();
