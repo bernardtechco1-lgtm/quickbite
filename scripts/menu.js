@@ -117,12 +117,13 @@ button.forEach((btn)=>{
  }) 
 })
 
-console.log(cart)
 
-function addCart(name, price, img){
-    cart.push({name, price, img})
-     |
-     localStorage.setItem("cart", JSON.stringify(cart))
+function addCart(name, price, img) {
+    cart = JSON.parse(localStorage.getItem("cart")) || []
+    
+    cart.push({ name, price, img }); // push as one object
+    
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 // const storageObj = JSON.stringify(cart)

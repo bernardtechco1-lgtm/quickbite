@@ -98,16 +98,28 @@ const main = document.getElementById("body");
 
 const empty = document.querySelector(".empty");
 
-
-
-
-
-const foodArray = [
-    ["images/Egusi Soup.webp","Egusi","Egusi soup a very delicious and mouth watering dish", "2,000"],
-    ["images/noodles.webp","Noodles","Noodles a very light yet fulfilling meal", "1,800"],
-    ["images/beans.webp","Beans","Flavoured delicious beans", "1,900"]
+let foodArray = [
 
 ];
+
+
+    const saved = localStorage.getItem("cart");
+    const cartObj = JSON.parse(saved);
+
+    // cartObj.forEach(items =>{
+    //     console.log(items)
+
+        for (let itemmm of cartObj){
+        let{name, price, img} = itemmm
+        foodArray.push([img,name,"",price]);
+        }
+
+
+
+
+console.log(foodArray)
+
+
 
 if(foodArray.length > 0){
     empty.classList.add("hide");
@@ -118,33 +130,26 @@ if(foodArray.length > 0){
 };
 
 
-for (items of foodArray){
+for (let items of foodArray){
     getCart.innerHTML +=addFoodCard(...items);
     main.append(getCart);
    
 
 };
-const deleteButtons = document.querySelectorAll(".closeBut");
+// const deleteButtons = document.querySelectorAll(".closeBut");
 
 
-// deleteButtons.forEach((element, index)=>{
-//      element.addEventListener("click", (event) => {
-//      event.target.classList.add("exit")
-
-
-//       if(foodArray[index]){           
-//         foodArray.splice(index,1)
-//         }
-//      })
-    
-
-//         console.log(foodArray[index])
-
-
-
-//     console.log(element)
-//     console.log(index)
-// });
+// function attachDeleteListeners() {
+//     document.querySelectorAll(".closeBut").forEach((element, index) => {
+//         element.addEventListener("click", () => {
+//             element.closest(".eachCard").remove();
+//             foodArray.splice(index, 1);
+//             localStorage.setItem("cart", JSON.stringify(foodArray));
+//             attachDeleteListeners();
+//             updateTotal();
+//         });
+//     });
+// }
 
 
 
@@ -153,13 +158,13 @@ const deleteButtons = document.querySelectorAll(".closeBut");
         
 
 
-
+// function updateTotal() {
 /// CALCULATION /////
 let total =0;
 
 foodArray.forEach(item =>{
 
-    total += Number(item[3].replace("," , ""));
+    total += Number(item[3]);
 })
 const serviceFee = 30;
 const estimatedDelivery = 20;
@@ -178,8 +183,5 @@ callCartCheckout.innerHTML = cartCheckout(total,estimatedDelivery,serviceFee,gra
 //    console.log(item.addFoodCard()) 
 // })
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    const saved = localStorage.getItem("cart")
-    const cartObj = JSON.parse(saved)
-    console.log(cartObj)
-})
+// attachDeleteListeners()
+// updateTotal()
