@@ -1,168 +1,14 @@
 const orderBtn = document.querySelector('.order');
-
+///THE ORDER NOW BUTTON CHANGES THE THE PAGE TO THE MENU PAGE
 orderBtn.addEventListener('click', () => {
     window.location.href = 'menu.html';
 });
 
 
-
-
-// function cartCheckout(subTotal,estimatedDelivery,serviceFee,total,arrivalTime){ 
-    
-//     return `
-//     <div class = "check">
-
-//         <div class = "checkout">
-//             <h2 class = "h1">Order Summary</h2>
-//             <div class = "remH">
-//                 <h5 style="padding-bottom: 20px;">Subtotal</h5>
-        
-//                 <h5 style="padding-bottom: 20px; ">Estimated Delivery</h5>
-//                 <h5 style="padding-bottom: 10px;">Service Fee</h5>
-//                 <div class ="checkoutPrice">
-//                     <h5 style="padding-bottom: 20px;">₦${subTotal}</h5>
-//                     <h5 style="padding-bottom: 20px;">₦${estimatedDelivery}</h5>
-//                     <h5 >₦${serviceFee}</h5>
-//                 </div>
-
-
-//             </div>
-            
-//             <hr class = "line">
-//             <br>
-
-//             <div class = "checkoutTotal">
-
-//             <div class = "h">
-//                 <h2 id = "light"  >TOTAL DUE</h2>
-//                 <h2  id = "thick1">₦${total}</h2>
-//             </div>
-
-            
-//             <div class="ArrivalTime">
-//                 <h6 id = "thick">Estimated arrival</h6>
-//                 <h4 id = "light2">${arrivalTime}</h4>
-//             </div>
-
-//             </div>
-
-//             <div class = "checkoutButtonContainer">
-//                 <button class="checkoutButton">Checkout &RightArrow;</button>
-//             </div>
-
-
-
-
-        
-//         </div>
-
-//     </div>`
-
-// }
-// const getCart =document.createElement("div");
-// const callCartCheckout = document.createElement("div");
-// const main = document.getElementById("body");
-
-
-
-
-
-
-
-// const empty = document.querySelector(".empty");
-
-
-
-
-
-// const foodArray = [
-//     ["images/Egusi Soup.webp","Egusi","Egusi soup a very delicious and mouth watering dish", "2,000"],
-//     ["images/noodles.webp","Noodles","Noodles a very light yet fulfilling meal", "1,800"],
-//     ["images/beans.webp","Beans","Flavoured delicious beans", "1,900"]
-
-// ];
-
-// if(foodArray.length > 0){
-//     empty.classList.add("hide");
-//     
-// } else if(foodArray.length < 0){
-//     empty.classList.remove("hide");
-
-// };
-
-
-// for (items of foodArray){
-//     getCart.innerHTML +=addFoodCard(...items);
-//     main.append(getCart);
-   
-
-// };
-// const deleteButtons = document.querySelectorAll(".closeBut");
-
-
-// // deleteButtons.forEach((element, index)=>{
-// //      element.addEventListener("click", (event) => {
-// //      event.target.classList.add("exit")
-
-
-// //       if(foodArray[index]){           
-// //         foodArray.splice(index,1)
-// //         }
-// //      })
-    
-
-// //         console.log(foodArray[index])
-
-
-
-// //     console.log(element)
-// //     console.log(index)
-// // });
-
-
-
-
-
-        
-
-
-
-// /// CALCULATION /////
-// let total =0;
-
-// foodArray.forEach(item =>{
-
-//     total += Number(item[3].replace("," , ""));
-// })
-// const serviceFee = 30;
-// const estimatedDelivery = 20;
-// let grandTotal = total + serviceFee + estimatedDelivery;
-// callCartCheckout.innerHTML = cartCheckout(total,estimatedDelivery,serviceFee,grandTotal,"5-10min");
-
-// for(let a = 1; a < deleteCard; a++){
-//     deleteCard.addEventListener("click",()=>{
-//     deleteCard.classList.add("exit")
-
-// })
-
-// }
-
-// getCart.forEach(item => {
-//    console.log(item.addFoodCard()) 
-// })
-
-
-
+////USING DOM TO GET THE HTML ELEMENTS
 const empty = document.querySelector(".empty");
 const check = document.querySelector(".check");
 
-// if(cartObj.length > 0){
-//     empty.classList.add("hide");
-    
-// } else if(cartObj.length < 0){
-//     empty.classList.remove("hide");
-
-// };
 
     /// COLLECTING ITEMS////////////////
     const saved = localStorage.getItem("cart")
@@ -180,6 +26,8 @@ let total = document.getElementById("total")
   let total1 = 0
   let delivery1 = 0
   let service1 = 0
+
+  //// THE IF LOOP USED TO CHECK WETHER ANYTHING IS IN THE CART IN ORDER TO DISPLAY THE ITEMS OR THE NO-ITEM MESSAGE
 
       if(cartObj.length === 0){
              empty.classList.remove("hide");
@@ -203,6 +51,8 @@ let total = document.getElementById("total")
         cartObj.forEach(function(items, index){  
         
            let list = document.createElement("li")
+
+           ////// THE HTML  DESIGN CALLED USING TEMPLATE STRING, ASSIGNED TO THE VARIABLE list////
             list.innerHTML += `
             <div class = "eachCard">
                 <div  class = "items">
@@ -229,31 +79,34 @@ let total = document.getElementById("total")
             </div>
         </div>`;
 
+        //// THE list is being appended to the Ul in the html file///
+
         list_container.appendChild(list)
+
+        //// CALCULATING THE PRICE//
          price = items.price * items.qty
-         console.log(price)
+
+         //// ADDING THE CALCULATION TO A VARIABLE subtotal1
+
         subtotal1 += price
-        console.log(subtotal1)
         })
+
+        ///ADDING THE FINAL CALCULATION AFTER THE LOOP TO THE subtotal element///
         subtotal.innerHTML= `₦${subtotal1}`;
+
         delivery1 = Number(50);
         delivery.innerHTML = `₦${delivery1}`
         service1 = Number(30);
         service.innerHTML = `₦${service1}`
-        console.log(delivery)
-        console.log(service)
         total1= delivery1 + service1 + subtotal1
-        console.log(total1)
         total.innerHTML = `₦${total1}`
       
 
         
 
-        // function increaseQty(index){
-        //     cartObj[index].qty += 1 
-        // }
-
     }
+
+    ////Event listener for the quantity buttons
     
 list_container.addEventListener("click", (e) => {
     if (e.target.classList.contains("increase")) {
@@ -266,7 +119,7 @@ list_container.addEventListener("click", (e) => {
     if (e.target.classList.contains("decrease")) {
         let index = e.target.parentElement.dataset.index;
         if(cartObj[index].qty <=1 ){
-            alert("no")
+            alert("Sorry, Cannot set Quantiy less than 1")
         }else{
         cartObj[index].qty--;
         updatecart();
@@ -275,6 +128,9 @@ list_container.addEventListener("click", (e) => {
        
     }
 }); 
+
+
+///FUNCTION TO DELETE CARD 
 
         function deleteCard(index){
     cartObj.splice(index, 1)
@@ -285,13 +141,14 @@ list_container.addEventListener("click", (e) => {
     
 }
 
+///FUNCTION TO ALWAYS RESET THE SUBTOTAL WHEN CALLED
 function updatecart (){
     subtotal1 = 0;
     
 
 }
 
-        
+/// CALLING THE RENDER CART FUNCTION        
     renderCart()
     
      

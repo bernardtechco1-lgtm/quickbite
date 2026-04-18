@@ -114,7 +114,7 @@ button.forEach((btn)=>{
     let img = e.currentTarget.dataset.img
     let qty = Number(e.currentTarget.dataset.qty)
    addCart(name, price, img, qty)
-   alert("item added")
+   alert(`${name} added`)
  }) 
 })
 
@@ -131,13 +131,6 @@ function addCart(name, price, img, qty){
 
 
 
-// const storageObj = JSON.stringify(cart)
-
-
-
-// let cartt = localStorage.getItem("cart")
-// let items = JSON.parse(cartt)
-// console.log(items)
 
 
 
