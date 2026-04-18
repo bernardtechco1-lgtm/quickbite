@@ -1,11 +1,11 @@
-/// TO DISPLAY ITEMS IN THE MENU
+/// TO DISPLAY ITEMS IN THE MENU//////////////
 let allItems = [...rice, ...Swallows, ...Soups, ...Grills, ...Drinks]
 let total = document.getElementById("showing-count")
 let total_count = 0
 
 let cat_num = document.querySelectorAll(".cat-tag")
 
-// TO LOOP THROUGH AND GET THE ARRAY ELEMENTS/////////
+// FUNCTION TO GET EACH ARRAYITEMS AND GRID ID/////////
 function displayItems(arrayItems, gridId){
    let grid = document.getElementById(gridId)
    grid.innerHTML = ""
@@ -15,6 +15,7 @@ function displayItems(arrayItems, gridId){
 
     let count = 0
 
+      /// LOOP THROUGH TO GET EACH ITEM IN THE ARRAY////////////////
         arrayItems.forEach((items)=>{
         grid.innerHTML +=  `
           
@@ -37,6 +38,9 @@ function displayItems(arrayItems, gridId){
 
         `
     })
+     /// LOOP THROUGH TO GET EACH ITEM IN THE ARRAY ENDS HERE////////////////
+
+
 
     // TO KNOE THE COUNT OF EACH ITEM PER SECTION
      count = arrayItems.length
@@ -52,13 +56,13 @@ function displayItems(arrayItems, gridId){
 
     
 }
+// FUNCTION TO GET EACH ARRAYITEMS AND GRID ID ENDS HERE/////////
 
 
 
 
 
-
-// TO DISPLAY EACH ITEMS TO THEIR RESPECTIVE GRID
+// TO DISPLAY EACH ITEMS TO THEIR RESPECTIVE GRID/////////
 displayItems(rice, 'rice-grid')
 displayItems(Swallows, 'Swallows-grid')
 displayItems(Soups, 'soups-grid')
@@ -66,8 +70,8 @@ displayItems(Grills, 'grills-grid')
 displayItems(Drinks, 'drinks-grid')
 
 
-// TO SEARCH TO ITEMS
 
+//// TO SEARCH TO ITEMS /////////////
 let search = document.getElementById("searchInput")
 
 search.addEventListener("input", (e) => {
@@ -101,8 +105,12 @@ search.addEventListener("input", (e) => {
     displayItems(filteredGrills, 'grills-grid')
     displayItems(filteredDrinks, 'drinks-grid')
 })
+//// TO SEARCH FOR ITEMS ENDS HERE/////////////
 
 
+
+
+//// TO ADD TO CART /////////////////////
 let cart = []
 
 let button = document.querySelectorAll(".add-btn")
@@ -127,17 +135,9 @@ function addCart(name, price, img, qty){
      localStorage.setItem("cart", JSON.stringify(cart))
 }
 
+//// TO ADD TO CART ENDS HERE/////////////////////
 
 
-
-
-// const storageObj = JSON.stringify(cart)
-
-
-
-// let cartt = localStorage.getItem("cart")
-// let items = JSON.parse(cartt)
-// console.log(items)
 
 
 
