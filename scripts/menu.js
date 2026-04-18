@@ -30,7 +30,7 @@ function displayItems(arrayItems, gridId){
         
         <div class="meal-footer">
           <span class="meal-price">₦${items.price}</span>
-          <button class="add-btn" data-name="${items.name}" data-price="${items.price}" data-img="${items.img}">+</button>
+          <button class="add-btn" data-name="${items.name}" data-price="${items.price}" data-img="${items.img}" data-qty="${items.qty}">+</button>
         </div>
       </div>
     </div>
@@ -112,18 +112,24 @@ button.forEach((btn)=>{
     let name = e.currentTarget.dataset.name
     let price = Number(e.currentTarget.dataset.price)
     let img = e.currentTarget.dataset.img
-   addCart(name, price, img)
+    let qty = Number(e.currentTarget.dataset.qty)
+   addCart(name, price, img, qty)
    alert("item added")
  }) 
 })
 
 console.log(cart)
 
-function addCart(name, price, img){
-    cart.push({name, price, img})
+function addCart(name, price, img, qty){
+    cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart.push({name, price, img, qty})
      |
      localStorage.setItem("cart", JSON.stringify(cart))
 }
+
+
+
+
 
 // const storageObj = JSON.stringify(cart)
 

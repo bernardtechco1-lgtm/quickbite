@@ -185,6 +185,10 @@
     z-index: 100;
     animation: bounce 4s infinite ease-in-out alternate;
 }
+
+.check.hide{
+    display: none;
+}
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -355,3 +359,6 @@ footer {
   footer a { color: var(--orange); text-decoration: none; }
 
 
+li{
+    list-style-type: none;
+}
