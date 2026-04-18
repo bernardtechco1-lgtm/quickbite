@@ -113,7 +113,7 @@ button.forEach((btn)=>{
     let price = Number(e.currentTarget.dataset.price)
     let img = e.currentTarget.dataset.img
    addCart(name, price, img)
-   alert("item added")
+   alert(`${name} has been added  to cart`)
  }) 
 })
 

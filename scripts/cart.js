@@ -98,18 +98,14 @@ const main = document.getElementById("body");
 
 const empty = document.querySelector(".empty");
 
-let foodArray = [
-
-];
-
+let foodArray = [];
 
     const saved = localStorage.getItem("cart");
     const cartObj = JSON.parse(saved);
 
-    // cartObj.forEach(items =>{
-    //     console.log(items)
+   
 
-        for (let itemmm of cartObj){
+    for (let itemmm of cartObj){
         let{name, price, img} = itemmm
         foodArray.push([img,name,"",price]);
         }
@@ -119,15 +115,22 @@ let foodArray = [
 
 console.log(foodArray)
 
+function checker(){
 
 
-if(foodArray.length > 0){
+if(foodArray.length == 0){
+    callCartCheckout.innerHTML = "";
+    empty.classList.remove("hide");
+    
+
+}
+else if(foodArray.length > 0){
     empty.classList.add("hide");
     main.append(callCartCheckout)
-} else if(foodArray.length < 0){
-    empty.classList.remove("hide");
+}
 
-};
+}
+checker();
 
 
 for (let items of foodArray){
@@ -136,52 +139,44 @@ for (let items of foodArray){
    
 
 };
-// const deleteButtons = document.querySelectorAll(".closeBut");
+const deleteButtons = document.querySelectorAll(".closeBut");
 
 
-// function attachDeleteListeners() {
-//     document.querySelectorAll(".closeBut").forEach((element, index) => {
-//         element.addEventListener("click", () => {
-//             element.closest(".eachCard").remove();
-//             foodArray.splice(index, 1);
-//             localStorage.setItem("cart", JSON.stringify(foodArray));
-//             attachDeleteListeners();
-//             updateTotal();
-//         });
-//     });
-// }
+function attachDeleteListeners() {
+    document.querySelectorAll(".closeBut").forEach((element, index) => {
+        element.addEventListener("click", () => {
+            element.closest(".eachCard").remove();
+            foodArray.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(foodArray));
+            attachDeleteListeners();
+            updateTotal();
+            checker();
+        });
+    });
+}
 
 
 
 
 
-        
-
-
-// function updateTotal() {
+function updateTotal() {
+    let total= 0
 /// CALCULATION /////
-let total =0;
-
 foodArray.forEach(item =>{
-
-    total += Number(item[3]);
+    total += (item[3]);
 })
 const serviceFee = 30;
 const estimatedDelivery = 20;
 let grandTotal = total + serviceFee + estimatedDelivery;
 callCartCheckout.innerHTML = cartCheckout(total,estimatedDelivery,serviceFee,grandTotal,"5-10min");
 
-// for(let a = 1; a < deleteCard; a++){
-//     deleteCard.addEventListener("click",()=>{
-//     deleteCard.classList.add("exit")
 
-// })
+}
 
-// }
 
-// getCart.forEach(item => {
-//    console.log(item.addFoodCard()) 
-// })
+attachDeleteListeners()
+updateTotal()
 
-// attachDeleteListeners()
-// updateTotal()
+function quatity(){
+    
+}
