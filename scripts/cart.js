@@ -136,8 +136,13 @@ list_container.addEventListener("click", (e) => {
     cartObj.splice(index, 1)
     localStorage.setItem("cart", JSON.stringify(cartObj))
     updatecart()
-    setTimeout( location.reload(), 5000)
+    
     renderCart()
+    
+     if(cartObj.length === 0){
+        empty.classList.remove("hide");
+        check.classList.add("hide");
+    }
     
 }
 
