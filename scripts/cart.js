@@ -136,7 +136,7 @@ list_container.addEventListener("click", (e) => {
     cartObj.splice(index, 1)
     localStorage.setItem("cart", JSON.stringify(cartObj))
     updatecart()
-    location.reload();
+    setTimeout( location.reload(), 5000)
     renderCart()
     
 }
