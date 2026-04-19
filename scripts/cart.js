@@ -32,6 +32,7 @@ let total = document.getElementById("total")
       if(cartObj.length === 0){
              empty.classList.remove("hide");
              check.classList.add("hide");
+            
 
              
         }else{
@@ -136,8 +137,14 @@ list_container.addEventListener("click", (e) => {
     cartObj.splice(index, 1)
     localStorage.setItem("cart", JSON.stringify(cartObj))
     updatecart()
-    location.reload();
+    
     renderCart()
+
+     if(cartObj.length === 0){
+        empty.classList.remove("hide");
+        check.classList.add("hide");
+    
+    }
     
 }
 

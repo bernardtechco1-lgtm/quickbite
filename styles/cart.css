@@ -184,10 +184,12 @@
     height: px;  
     z-index: 100;
     animation: bounce 4s infinite ease-in-out alternate;
+    
 }
 
 .check.hide{
     display: none;
+    
 }
 @keyframes bounce {
   0%, 100% {

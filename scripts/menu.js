@@ -123,7 +123,7 @@ button.forEach((btn)=>{
     let qty = Number(e.currentTarget.dataset.qty)
     let desc = e.currentTarget.dataset.desc
    addCart(name, price, img, qty, desc)
-   alert("item added")
+   alert(`${name} added`)
  }) 
 })
 
