@@ -64,7 +64,7 @@ let search = document.getElementById("searchInput")
 
 search.addEventListener("input", (e) => {
     let value = e.target.value.toLowerCase()
-
+    
    
 
     let filteredRice = rice.filter(item =>

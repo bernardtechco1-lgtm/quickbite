@@ -68,11 +68,15 @@ let total = document.getElementById("total")
             <div class = "placeHold" >Munch Box
 
             </div>
+
+            
             <div class = "quantitySelector" data-index="${index}">
                    <button class="button2 increase">+</button>
             <span class = "quan" >${items.qty}</span>
             <button class="buttons decrease">-</button>
                     </div>
+
+
 
                 <div class = "price" >
                     ₦${items.price * items.qty}
@@ -109,14 +113,17 @@ let total = document.getElementById("total")
 
     ////Event listener for the quantity buttons
     
+
+    /// INCREMENT CODE ///////////////////////
 list_container.addEventListener("click", (e) => {
     if (e.target.classList.contains("increase")) {
         let index = e.target.parentElement.dataset.index;
         cartObj[index].qty++;
         updatecart();
         renderCart();
+        console.log(index)
     }
-
+//// DECREAMENT CODE ///////////////////////////////
     if (e.target.classList.contains("decrease")) {
         let index = e.target.parentElement.dataset.index;
         if(cartObj[index].qty <=1 ){
@@ -128,6 +135,8 @@ list_container.addEventListener("click", (e) => {
         }
        
     }
+
+    
 }); 
 
 
